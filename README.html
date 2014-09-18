@@ -1,0 +1,306 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Asteroids3D README</title>
+<style type="text/css">
+table.bd {
+	border-collapse: collapse;
+	border: 1px solid #000000;
+}
+table.bd td {
+	border: 1px solid #000000;
+	padding: 2px;
+}
+</style>
+</head>
+
+<body>
+
+<p>Asteroids3D - a first person game of blowing up asteroids<br />
+Copyright (C) 2000 Stuart Mark Pomerantz &lt;smp [at] psc edu&gt;<br />
+Copyright © Jan Engelhardt &lt;jengelh [at] gmx de&gt;, 2003 - 2007</p>
+
+<h1>Description</h1>
+
+<p class="block">Welcome! Thanks for trying out asteroids3D. This program is
+known to compile without error on SUSE LINUX 9.3-10.3, and possibly some other
+Linux distributions. The program requires a GL library, which is usually
+provided with your card's drivers. Alternatively, you can use the
+software-based Mesa3D library, available at <a href="http://www.mesa3d.org/"
+target="_blank">mesa3d.org</a>.</p>
+
+<h1>Thanks to</h1>
+
+<p class="block">Thank you to my girlfriend Colleen for her support, and never
+failing to say "oooh, cool". Thank you to Lee Beatty for his enormously helpful
+artistic suggestions. He has got a great eye for how things should look. Thank
+you to everyone on the internet who emailed me with suggestions and kind
+words!</p>
+
+<p class="block">Thanks to Rob R. for a patch and a nebula graphic
+(nebula3).</p>
+
+<h1>Download</h1>
+
+<p class="block">The latest copy of Asteroids3D can be found at <a
+href="http://jengelh.hopto.org/p/as3d/"
+target="_blank">jengelh.hopto.org/p/as3d/</a>.</p>
+
+<h1>Compilation &amp; Installation</h1>
+
+<p class="block">asteroids3D uses autoconf, so you can use the usual
+two-step. For running asteroids3D out of the source directory, you need:</p>
+
+<p class="code"><code>./configure --with-gamedatadir=src<br />
+make</code></p>
+
+<p class="block">If you want to actually install it in the system, you could
+use:</p>
+
+<p class="code"><code>./configure --with-gamesdir=/usr/games
+--with-gamedatadir=/usr/share/games/asteroids3D<br />
+make install</p>
+
+<p class="block">If you need extra compilation or linking flags, you can pass
+them to configure using CFLAGS="your options" and LDFLAGS="opts" respectively.
+For example, to turn on debugging:</p>
+
+<p class="code"><code>./configure CFLAGS="-O0 -ggdb3"</code></p>
+
+<h1>Playing</h1>
+
+<p class="block">The object of the game is to stay alive and destroy all the
+asteroids in the asteroid field.</p>
+
+<p class="block">To view the available command line options type:</p>
+
+<p><code>asteroids3D -help</code></p>
+
+<h1>Playing &gt; Controls</h1>
+
+<h2>mouse</h2>
+
+<p class="block">The mouse rotates your ship up, down, left, and right. The
+left mouse button fires your torpedo, the right one targets the asteroid in the
+crosshair, if any.</p>
+
+<h2>keyboard</h2>
+
+<p class="block">The basic keyboard movement follows the commonly-known
+WASD/SAWD scheme.</p>
+
+<table border="1" class="bd">
+	<tr>
+		<td>ESC</td>
+		<td>exit the game immediately</td>
+	</tr>
+	<tr>
+		<td><code>$</code></td>
+		<td>turn on debugging axes and cubes (not very interesting for
+		playing)</td>
+	</tr>
+	<tr>
+		<td><code>s</code>/<code>w</code></td>
+		<td>slide forward/backward</td>
+	</tr>
+	<tr>
+		<td><code>a</code>/<code>d</code></td>
+		<td>slide left/right</td>
+	</tr>
+	<tr>
+		<td><code>c</code>/<code>x</code></td>
+		<td>slide up/down</td>
+	</tr>
+	<tr>
+		<td><code>f</code></td>
+		<td>hit the breaks!</td>
+	</tr>
+	<tr>
+		<td><code>b</code></td>
+		<td>automatically target next asteroid</td>
+	</tr>
+	<tr>
+		<td><code>TAB</code></td>
+		<td>target asteriod in crosshair</td>
+	</tr>
+	<tr>
+		<td><code>p</code></td>
+		<td>pause the game</td>
+	</tr>
+	<tr>
+		<td>SPACE</td>
+		<td>fire a torpedo</td>
+	</tr>
+	<tr>
+		<td><code>[</code></td>
+		<td>activate/deactivate headlight</td>
+	</tr>
+	<tr>
+		<td colspan="2"><b>Best with keypad:</b></td>
+	</tr>
+	<tr>
+		<td><code>4</code>/<code>6</code></td>
+		<td>rotate about the ship's y axis</td>
+	</tr>
+	<tr>
+		<td><code>7</code>/<code>9</code></td>
+		<td>rotate about the ship's z axis</td>
+	</tr>
+	<tr>
+		<td><code>8</code>/<code>2</code></td>
+		<td>rotate about the ship's x axis</td>
+	</tr>
+	<tr>
+		<td colspan="2"><b>Graphics features:</b><br />
+		These keys are like toggle switches now and are mapped across
+		the top of the [US] keyboard</td>
+	</tr>
+	<tr>
+		<td><code>+</td>
+		<td>activate/deactivate crosshair</td>
+	</tr>
+	<tr>
+		<td><code>_</td>
+		<td>activate/deactivate tracer</td>
+	</tr>
+	<tr>
+		<td><code>(</td>
+		<td>activate/deactivate dust effect</td>
+	</tr>
+	<tr>
+		<td><code>)</td>
+		<td>activate/deactivate shield effect</td>
+	</tr>
+	<tr>
+		<td><code>*</td>
+		<td>activate/deactivate torpedo lens flares</td>
+	</tr>
+	<tr>
+		<td><code>m</td>
+		<td>activate/deactivate asteroid textures</td>
+	</tr>
+	<tr>
+		<td><code>k</td>
+		<td>activate/deactivate nebula textures</td>
+	</tr>
+	<tr>
+		<td><code>o</td>
+		<td>activate/deactivate torpedo texture</td>
+	</tr>
+	<tr>
+		<td><code>#</td>
+		<td>activate/deactivate sound</td>
+	</tr>
+	<tr>
+		<td><code>!</td>
+		<td>swap mouse x direction</td>
+	</tr>
+	<tr>
+		<td><code>@</td>
+		<td>swap mouse y direction</td>
+	</tr>
+</table>
+
+<h1>HUD symbology</h1>
+
+<p class="block">The position of your mouse is represented by a green dot.</p>
+
+<p class="block">The purple circles on the left represent torpedo slots. As you
+fire they will dim, letting you know that you have fired and a slot is
+reloading. You have five torpedos.</p>
+
+<p class="block">The number at the top center of the screen tells you how many
+asteroids are left in the field.</p>
+
+<p class="block">The shield indicator at the bottom right of the screen tells
+you the strength of your shield indicator. When you are hit by an asteroid, the
+shield will automatically come on and you will bounce elastically off the
+asteroid. The amount your shield will decrease depends on the momentum of the
+asteroid, which depends on the speed and mass of the asteroid and your ship.
+Avoid getting hit by big asteroids if you can. (Avoid getting hit at all,
+preferably <code>:-)</code></p>
+
+<p class="block">The collision warning indicator is at the lower center of your
+screen. There are four arrows representing above the ship, below the ship, to
+the left of the ship, and to the right of the ship. The oval represents
+directly behind you. If the dim red arrow (or the oval) lights up, then you
+know that an asteroid is near you on that side. For example, if the right red
+arrow lights up, then an asteroid is near you on your right side. It is good to
+move at a ninety degree angle away from close asteroids.</p>
+
+<p class="block">Finally, a group of numbers on the lower left corner of the
+screen represents your velocity vector (x,y,z) in m/s. Although this looks
+cool, it may not be of much use to you. You will be able to see if you are
+moving, though.</p>
+
+<p class="block">When you lock on to an asteroid:</p>
+
+<p class="block">The spot where your torpedo will be in the time it will take
+to reach the asteroid is represented by either a yellow (out of range) or red
+(in range) dot.</p>
+
+<p class="block">The spot where the asteroid will be in the time it will take
+your torpedo to reach the asteroid is represented by either a yellow (out of
+range) or red (in range) circle. The target circle grows and shrinks with
+distance to the target so that you have a more accurate idea of how big a
+target you need to hit is at a given distance.</p>
+
+<p class="block">There is an outer circle with hash marks which turns right as
+you shorten the distance between the ship and the asteroid and left as the
+distance between the ship and the asteroid increases. The outer circle will
+give you a good idea of your rate of closure with the target.</p>
+
+<p class="block">Put the dot inside the circle when they are both red and
+voilà, you hit. There are a small number of cases where the aspect angle of the
+torpedo on the target is such that you will miss. And unless you are close
+enough, the torpedo may fizzle out before it hits. Additionally, the
+will-hit-or-miss-detection logic is simple, so it may happen that a torpedo
+might miss if the distance is close to the maximum possible distance while the
+circle is still red.</p>
+
+<p class="block">The targeted asteroid is boxed in green, and has a green line
+pointing in the direction it is travelling (its movement vector).</p>
+
+<h1>Comments and suggestions</h1>
+
+<p class="block">I welcome all comments and suggestions. Please remember that
+this game is A WORK IN PROGRESS. I do not consider it finished or completely
+debugged. The version number is meant to reflect that.</p>
+
+<p class="block">If you have a comment or suggestion, please email it to the
+current maintainer, Jan Engelhardt and/or cc: Stuart. If you have a criticism,
+I would like to hear it as long as it is constructive. "This game sucks"
+criticisms will be ignored and put in the trash.</p>
+
+<h1>Finally...</h1>
+
+<p class="block">I am giving this away to thank the GNU community of developers
+for all the wonderful software they have given away to me for free. I thank you
+all for your generosity. I hope you like this game.</p>
+
+<p>Stu Pomerantz</p>
+
+<h1>License</h1>
+
+<pre>This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+MA 02110-1301  USA
+
+
+Stuart Pomerantz
+3935 Stonecliffe drive
+Monroeville, PA 15146</pre>
+
+</body>
+</html>
